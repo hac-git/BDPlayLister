@@ -16,7 +16,7 @@ The script has currently two checks for which playlist to use.
 
 ## Requirements
 * Python 2.7+
-* python-xbmc library [https://github.com/jcsaaddupuy/python-xbmc]
+* python-xbmc library https://github.com/jcsaaddupuy/python-xbmc
 
 ## Configuration
 * Kodi needs to have the JSON RPC interface enabled. Set System - Services - Web server - "Allow remote control via HTTP" as enabled.
