@@ -20,6 +20,10 @@ If none of the above are found, the script falls back to using the internal Kodi
 * Python 2.7+
 * python-xbmc library https://github.com/jcsaaddupuy/python-xbmc
 
+### Platforms
+Currently only Windows is supported, but the only platform specific code is the .bat-file.
+This could be replaced by a bash script for other platforms.
+
 ## Configuration
 * Kodi needs to have the JSON RPC interface enabled. Set System - Services - Web server - "Allow remote control via HTTP" as enabled.
    * Script uses port 8080
