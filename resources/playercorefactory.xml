@@ -1,0 +1,16 @@
+<playercorefactory>
+    <players>
+        <player name="BDPlayLister" type="ExternalPlayer" audio="false" video="true">
+            <filename>C:\Utils\BDPlayLister\bdplaylister.bat</filename>
+            <args>"{0}"</args>
+            <hidexbmc>false</hidexbmc>
+            <hideconsole>true</hideconsole>
+            <playcountminimumtime>600</playcountminimumtime>-->
+        </player>
+    </players>
+    <rules action="prepend">
+        <rule protocols="daap|rtv|rtmp|http|https|rtmpe|mms|rtp" player="DVDPlayer" />
+        <rule filename=".*intro.mp4" player="DVDPlayer" />
+        <rule filename=".*index.bdmv" player="BDPlayLister" />
+    </rules>
+</playercorefactory>
