@@ -14,7 +14,7 @@ The script has currently two checks for which playlist to use.
 * Place playlist.txt file in the Blu-ray BDMV root (same directory as index.bdmv file)
    * Write playlist number inside the playlist.txt file. For example "00800" without the quotes.
 
-If none of the above are found, the script falls back to using the internal Kodi player for the index.bdmv. DSPlayer will be used if found, otherwise it falls back to the standard DVDPlayer.
+If none of the above are found, the script falls back to using the internal Kodi player for the index.bdmv. DSPlayer will be used if found, otherwise it uses the standard DVDPlayer.
 
 ## Requirements
 * Python 2.7+
