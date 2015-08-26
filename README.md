@@ -14,6 +14,8 @@ The script has currently two checks for which playlist to use.
 * Place playlist.txt file in the Blu-ray BDMV root (same directory as index.bdmv file)
    * Write playlist number inside the playlist.txt file. For example "00800" without the quotes.
 
+If none of the above are found, the script falls back to using the internal Kodi player for the index.bdmv. DSPlayer will be used if found, otherwise it falls back to the standard DVDPlayer.
+
 ## Requirements
 * Python 2.7+
 * python-xbmc library https://github.com/jcsaaddupuy/python-xbmc
@@ -30,7 +32,7 @@ The script has currently two checks for which playlist to use.
 
 ## Troubleshooting
 * Kodi can crash if the stopping of initial playback and starting the playlist playback are timed incorrectly.
-   * bdplaylister.py has 0,1 second timeouts (time.sleep) before it calls back to Kodi to stop and start playback again.
+   * Currently bdplaylister.py has 0,1 second timeouts (time.sleep) before it calls back to Kodi to stop and before it starts playback again.
    * Increase these timeouts if Kodi freezes when starting Blu-ray playback.
    * If you disable the console hiding from Kodi config and the .bat for debugging, you need to increase the timeouts to few seconds.
 
@@ -39,8 +41,9 @@ Kodi add-on system doesn't allow us to react before it either opens the prompt f
 
 Add-ons only receive events when the playback has already started, so add-on would need to stop the current playback and then continue playback of the selected playlist.
 
-This playback stopping and restarting can be problematic especially if Kodi is also set to change the display refresh rate on playback. Stopping the playback while the player might still be initializing can cause Kodi to crash.
+This playback stopping and restarting can be problematic if Kodi is also set to change the display refresh rate on playback. Stopping the playback while the player might still be initializing can cause Kodi to crash.
 Especially the DSPlayer branch with madVR renderer doesn't like untimely interruptions to playback initialization.
 
-Our external player does not care if the playback stops abruptly, since it doesn't really play anything which allows us to quickly instruct Kodi to play the specific playlist instead of the whole Blu-ray.
+Our external player does not care if the playback stops abruptly, since it doesn't really play anything.
+This allows us to quickly instruct Kodi to play the specific playlist instead of the whole Blu-ray.
 This also results in much less UI flickering compared to add-on method.
